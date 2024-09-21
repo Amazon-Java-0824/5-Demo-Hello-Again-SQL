@@ -82,3 +82,18 @@ FROM robots;
 
 
 
+
+
+SELECT *
+FROM components;
+SELECT *
+FROM robots;
+
+SELECT *
+FROM components
+         LEFT JOIN robots ON components.robot_id = robots.id;
+
+SELECT m.maintenance_date, r.name, m.description
+FROM maintenance_logs m
+         LEFT JOIN robots r ON m.robot_id = r.id
+ORDER BY m.maintenance_date DESC;
